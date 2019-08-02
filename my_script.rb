@@ -9,14 +9,9 @@ TweetDeletion.with(accounts_bibou) do
     keep_if contains('[Veille]'), tag: ' 🔖 '
     keep_if contains('[Reading]'), tag: ' 🔖 '
     keep_if contains('[Bookmark]'), tag: ' 🔖 '
-    keep_if contains('Dareboost'), tag: ' 🚀 '
-    keep_if contains('webperf'), tag: ' 🚀 '
-    keep_if contains('perfmatters'), tag: ' 🚀 '
 
     keep_if by(:me), tag: ' 🗣 '
     keep_if by('boostmarks'), tag: ' 🔖 '
-    keep_if by('dareboost'), tag: ' 🚀 '
-    keep_if by('damienjubeau'), tag: ' 🚀 '
 
     keep_if rt_by_more_than(10), tag: ' 💯 '
     keep_if fav_by_more_than(10), tag: ' 💯 '
@@ -32,9 +27,6 @@ TweetDeletion.with(accounts_bibou) do
     keep_if contains('[Veille]'), tag: ' 🔖 '
     keep_if contains('[Reading]'), tag: ' 🔖 '
     keep_if contains('[Bookmark]'), tag: ' 🔖 '
-    keep_if contains('Dareboost'), tag: ' 🚀 '
-    keep_if contains('webperf'), tag: ' 🚀 '
-    keep_if contains('perfmatters'), tag: ' 🚀 '
 
     keep_if fav_by(:me), tag: ' ❤ ️'
     keep_if has_kept_reply, tag: ' 💬 '
@@ -43,8 +35,6 @@ TweetDeletion.with(accounts_bibou) do
     if is_rt
       keep_if rt_of(:me), tag: ' 🐻 '
       keep_if rt_of('boostmarks'), tag: ' 🔖 '
-      keep_if rt_of('dareboost'), tag: ' 🚀 '
-      keep_if rt_of('damienjubeau'), tag: ' 🚀 '
     else
       keep_if rt_by_more_than(1), tag: ' 💯 '
       keep_if fav_by_more_than(1), tag: ' 💯 '
@@ -61,7 +51,6 @@ TweetDeletion.with(accounts_lilou) do
 
   for_favorites(dry: false) do
     keep_if contains('libelilou'), tag: ' 👸 '
-    keep_if contains('zao'), tag: ' 💄 '
     keep_if contains('#damefannysigne'), tag: ' 👌 '
     keep_if contains('#phptour'), tag: ' 🐘 '
     keep_if rt_by_more_than(10), tag: ' 💯 '
@@ -74,7 +63,6 @@ TweetDeletion.with(accounts_lilou) do
 
   for_tweets(include_rts: true, dry: false) do
     keep_if contains('libelilou'), tag: ' 👸 '
-    keep_if contains('zao'), tag: ' 💄 '
     keep_if contains('#damefannysigne'), tag: ' 👌 '
     keep_if contains('#phptour'), tag: ' 🐘 '
     keep_if rt_by_more_than(10), tag: ' 💯 '
